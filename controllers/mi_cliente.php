@@ -4,9 +4,8 @@
 	require '../fw/fw.php';
 	require '../models/ListaCliente.php';
 	require '../models/ListaImpuesto.php';
-	require '../models/ClienteInscripto.php';
-
-	require '../views/alone_Cliente.php';
+    require '../models/ClienteInscripto.php';
+   	require '../views/alone_Cliente.php';
 
 
 

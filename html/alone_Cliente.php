@@ -24,7 +24,7 @@
 	<?php
 
 		foreach ($this->mis_impuestos as $key => $value) {
-			echo "<h3>" .  $key. "  estado = " . $value   ?> <a href="../modifico_estado.php/?cuil='<?= $cuil ?>'&nombre= '<?= $key ?>'            ">HECHO</a></h3><br>
+			echo "<h3>" .  $key. "  estado = " . $value   ?> <a href="../modifico_estado.php/?cuil='<?= $cuil ?>'&nombre= '<?= $key ?>'&mis-impuestos= ' ">HECHO</a></h3><br>
 
 
 	<?php } 

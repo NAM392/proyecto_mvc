@@ -16,6 +16,16 @@ class ClienteInscripto extends Model {
 	}
 
 
+	public function ModificoEstadoOK($ID,$CUIL){
+		$si = "si";
+		$this->db->query("UPDATE clienteinscripto  
+							SET estado = $si
+							WHERE cuil_cuit = $CUIL
+							AND id_impuesto = $ID
+							
+								   ");
+		return $this->db->fetch();
 
+	}
 
 }
