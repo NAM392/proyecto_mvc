@@ -8,7 +8,7 @@
    	require '../views/alone_Cliente.php';
 
 
-
+   	//comprobacion del GET
 
 	$LC = new ListaCliente();
 	$insc = new ClienteInscripto();

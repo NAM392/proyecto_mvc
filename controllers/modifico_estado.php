@@ -9,10 +9,12 @@ require '../views/alone_Cliente.php';
 $cuil =  $_GET['cuil'] ;
 $nombre_imp = $_GET['nombre'];
 
+//comprobacion del GET
+
 ?>
 
 <script type="text/javascript">
-		
+
 var conf = confirm("Ya realizaste este trabajo ? ");	
 if(conf == true){
 	<?php 
