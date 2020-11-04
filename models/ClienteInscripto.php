@@ -17,14 +17,18 @@ class ClienteInscripto extends Model {
 
 
 	public function ModificoEstadoOK($ID,$CUIL){
-		$si = "si";
+		$si = "\"si\"";
+		//preguntar si ya habia un si
+		$estado = $this->db->query("SELECT estado FROM clienteinscripto 
+						  WHERE cuil_cuit = $CUIL
+							AND id_impuesto = $ID ");
+		if($estado != "si"){
 		$this->db->query("UPDATE clienteinscripto  
-							SET estado = $si
+							SET estado = $si, fecha_realiz = NOW()
 							WHERE cuil_cuit = $CUIL
-							AND id_impuesto = $ID
-							
-								   ");
-		return $this->db->fetch();
+							AND id_impuesto = $ID  ");
+		}
+
 
 	}
 

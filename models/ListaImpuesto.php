@@ -16,8 +16,11 @@ class ListaImpuesto extends Model {
 	}
 	
 	public function getIDconNombre($nombre){
+	$_nombre = $this->db->escape($nombre);
+	$b_nombre ="\"$_nombre\"";
+	
 	$this->db->query("SELECT id_impuesto FROM listaimpuesto 
-					  WHERE nombre_impuesto = $nombre ");
+					  WHERE nombre_impuesto = $b_nombre");
 	return $this->db->fetch();
 	
 	}

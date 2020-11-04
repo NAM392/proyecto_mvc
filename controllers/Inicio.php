@@ -9,7 +9,7 @@ $vista = new Pantallainicio();
 $vista->nombre_usuario = "nombre de usuario";
 $vista->render();
 
-var_dump($nombre_usuario);
+
 //var_dump($elegi_cliente);
 
 

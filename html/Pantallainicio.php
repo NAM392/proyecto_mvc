@@ -6,7 +6,7 @@
 <body>
 
 
-<h3>Bienvenido : <?php $this->nombre_usuario ?></h3>
+<h3>Bienvenido : <?= $this->nombre_usuario ?></h3>
 
  
 

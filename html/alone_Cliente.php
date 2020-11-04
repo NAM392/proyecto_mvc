@@ -15,38 +15,55 @@
 	  	echo "<br><p>  DOMICILIO : " . $c['domicilio']   . "</p>";
 		echo "<br><p> MAIL : " . $c['mail']   . "</p>";
 		echo "<br><p> CELULAR: " . $c['celular']   . "</p>";
-		echo "<br><p> DEBE : $" . $c['honorarios']  . "</p>";
+		echo "<br><p> FECHA INICIO : " . $c['fecha_inicio']  .  "</p>";
+		echo "<br><p> DEBE : $" . $c['honorarios']  .  "</p>";
 	}
 ?>
 
 <br>
 	
 	<?php
-
+		
 		foreach ($this->mis_impuestos as $key => $value) {
-			echo "<h3>" .  $key. "  estado = " . $value   ?> <a href="../modifico_estado.php/?cuil='<?= $cuil ?>'&nombre= '<?= $key ?> ">HECHO</a></h3><br>
 
+			if($value == "no"){
+				echo "<h3>" .  $key. "  estado = " . $value   ?> <a class="botones" href="../modifico_estado.php/?cuil=<?= $cuil ?>&nombre=<?=$key?>">HECHO</a></h3><br>
+	<?php   }
+			else {
+				  echo "<h3>" .  $key. "  estado = " . $value  . "  (REALIZADO) "   ; 
 
-	<?php } 
-			
+		   }
 
-
-
-	
-
-
-
-	/*  foreach ($this->mis_impuestos as $i) {
-		echo "<h3>" .  $i['nombre_impuesto'] . "</h3>" . "<br>";
-	}
-
-
-	 */
-
-
-	?>
+	 } ?>
 	
    
+
+
+
+<script  src="../../jquery.js" ></script>
+<script type="text/javascript">
+	
+
+
+
+
+	$(".botones").click(function(){
+		 var resp = confirm("confirma?");
+		 if(!resp) return false;
+	 } );
+
+
+
+
+</script>
+
+
+
+	
+
+
+
+
 
 
 
