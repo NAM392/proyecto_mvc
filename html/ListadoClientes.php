@@ -12,6 +12,22 @@
 			<br>
 		<?php } ?>
 	
+
+		<br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+		<a href="NuevoCliente.php">AGREGAR NUEVO CLIENTE</a>
+		<br><br>
+		<a href="inicio.php">VOLVER
+		</a>
+
+
+              
+
+
+
+
 	
 </body>
 </html>
