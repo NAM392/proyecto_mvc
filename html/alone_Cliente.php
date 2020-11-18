@@ -39,6 +39,9 @@
    
 
 
+<br><br><br><br>
+<a href="../ListadoClientes.php">VOLVER</a>
+
 
 <script  src="../../jquery.js" ></script>
 <script type="text/javascript">

@@ -9,5 +9,10 @@ class ListaVenceMes extends Model {
 		return $this->db->fetchAll();
 	}
 
+	public function getMiFecha($id_impuesto,$ultimo) {
+		$this->db->query("SELECT f_mes FROM listavencemes WHERE id_impuesto = $id_impuesto AND ultimo_num_cui  = $ultimo ");
+		return $this->db->fetch();
+	}
+
 
 }

@@ -47,11 +47,6 @@ class Database {
 		return $str;
 	}
 
-	public function filasAfectadas() {
-		return mysql_affected_rows($this->res);
-	}
-
-
 
 
 

@@ -33,7 +33,7 @@
 <input type="" name="celular">
 <br><br><br><br>
 
-<button type="submit" >AGREGAR</button>
+<button type="submit" id="agregar" >AGREGAR</button>
 
 <br><br><br><br>
 
@@ -41,6 +41,23 @@
 
 </form>
 
+
+<script  src="../jquery.js" ></script>
+<script type="text/javascript">
+	
+
+
+
+
+	$("#agregar").click(function(){
+		 var resp = confirm("confirma?");
+		 if(!resp) return false;
+	 } );
+
+
+
+
+</script>
 
 
 

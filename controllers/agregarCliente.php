@@ -1,8 +1,9 @@
 <?php 
 
 require '../fw/fw.php';
-require '../views/agregarClienteNuevo.php';
 require '../models/agregarCliente.php';
+require '../views/ListadoClientes.php';
+require '../models/ListaCliente.php';
 
 
 /*COMPRUEBO TODOS LOS DATOS DE ENTRADA*/
@@ -16,10 +17,16 @@ $celular=$_POST['celular'];
 
 
 $AG=new agregarCliente();
+$LC = new ListaCliente();
 $resultado = $AG->agregar($cuil_cuit,$nombre,$dni,$domicilio,$mail,$celular);
-$vista = new agregarClienteNuevo();
+$clientes = $LC->getTodos();
+
+$vista = new ListadoClientes();
+$vista->clientes = $clientes;
 $vista->resultado=$resultado;
 $vista->render();
+
+
 
 
 
