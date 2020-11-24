@@ -10,7 +10,7 @@ class ListaVenceYear extends Model {
 	}
 
 	public function getMiFecha($id_impuesto,$ultimo) {
-		$this->db->query("SELECT f_year FROM listavenceyear WHERE id_impuesto = $id_impuesto AND ultimo_num_cui  = $ultimo ");
+		$this->db->query("SELECT fecha FROM listavenceyear WHERE id_impuesto = $id_impuesto AND ultimo_num_cui  = $ultimo ");
 		return $this->db->fetch();
 	}
 

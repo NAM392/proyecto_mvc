@@ -9,6 +9,8 @@ require '../views/ListadoClientes.php';
 $cuil = $_GET['cuil'];
 
 $elimino = new eliminoCliente ();
+
+/* probar throw catch */
 $resultado = $elimino->Erase($cuil);
 
 

@@ -16,16 +16,25 @@ $celular=$_POST['celular'];
 
 
 
-$AG=new agregarCliente();
+$AG = new agregarCliente();
 $LC = new ListaCliente();
 $resultado = $AG->agregar($cuil_cuit,$nombre,$dni,$domicilio,$mail,$celular);
+
+/*aca probar throw y catch*/
+
+if($resultado == 1){header('Location:ListadoClientes.php');}
+elseif ($resultado == 3) { die();echo "cliente ya existe" ;}
+else{die();}
+
+
+/*
 $clientes = $LC->getTodos();
 
 $vista = new ListadoClientes();
 $vista->clientes = $clientes;
 $vista->resultado=$resultado;
 $vista->render();
-
+*/
 
 
 

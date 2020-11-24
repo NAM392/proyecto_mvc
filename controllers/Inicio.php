@@ -10,7 +10,6 @@ $vista->nombre_usuario = "nombre de usuario";
 $vista->render();
 
 
-//var_dump($elegi_cliente);
 
 
 

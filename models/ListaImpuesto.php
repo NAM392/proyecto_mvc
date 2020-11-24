@@ -25,10 +25,7 @@ class ListaImpuesto extends Model {
 	
 	}
 
-
-
-
-
+	
 
 
 

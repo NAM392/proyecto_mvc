@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Nnuevo Cliente</title>
+	<title>Nuevo Cliente</title>
 </head>
 <body>
 

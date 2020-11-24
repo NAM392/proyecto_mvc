@@ -12,7 +12,7 @@ class ListaCliente extends Model {
 		public function getClienteConCuil($cuil) {
 		$this->db->query("SELECT * FROM listacliente
 							WHERE cuil_cuit = $cuil");
-		return $this->db->fetchAll();
+		return $this->db->fetch();
 	}
 
 
