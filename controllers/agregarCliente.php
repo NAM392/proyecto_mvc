@@ -4,15 +4,26 @@ require '../fw/fw.php';
 require '../models/agregarCliente.php';
 require '../views/ListadoClientes.php';
 require '../models/ListaCliente.php';
+require '../models/Sanitizacion.php';
 
 
 /*COMPRUEBO TODOS LOS DATOS DE ENTRADA*/
-$nombre=$_POST['nombre'];
-$dni=$_POST['dni'];
-$cuil_cuit=$_POST['cuil'];
-$domicilio=$_POST['domicilio'];
-$mail=$_POST['mail'];
-$celular=$_POST['celular'];
+$sani = new Sanitizacion();
+
+$_nombre=$_POST['nombre'];
+$_cuil_cuit=$_POST['cuil'];
+$_domicilio=$_POST['domicilio'];
+$_mail = $_POST['mail'];
+$_dni=$_POST['dni'];
+$_celular=$_POST['celular'];
+
+$nombre = $sani->Sani_string($_nombre);
+$cuil_cuit = $sani->Sani_cuil($_cuil_cuit);
+$domicilio = $sani->Sani_string($_domicilio);
+$mail = $sani->Sani_string($_mail);
+$celular = $sani->Sani_number($_celular);
+$dni = $sani->Sani_dni($_dni);
+
 
 
 

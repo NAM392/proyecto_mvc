@@ -6,7 +6,7 @@
 
 	<style>
 
-				html , body {
+		html , body {
 				height: 100%;
 				width: 100%;
 				overflow:hidden;
@@ -15,11 +15,11 @@
 
 		p{
 			padding-left: 583px;
-    padding-top: 6px;
-    font-family: fixed-width fontsAndale Mono, monospace;
-    color: brown;
-    text-shadow: 4px 4px 4px white;
-}
+		    padding-top: 6px;
+		    font-family: fixed-width fontsAndale Mono, monospace;
+		    color: brown;
+		    text-shadow: 4px 4px 4px white;
+		}
 
 
 		table th,table td {
@@ -51,7 +51,7 @@
 			    background-color: olive;
 			}
 
-	div.agregar{
+		div.agregar{
 				    margin-top: 17px;
 				    align-content: center;
 				    margin-left: 394px;
@@ -62,8 +62,8 @@
 				    background-color: #07C5A9;
 				    border-radius: 20px;
 
-}
-	div.borrar{
+					}
+		div.borrar{
 				    margin-top: -32px;
 				    align-content: center;
 				    margin-left: 1094px;
@@ -73,7 +73,7 @@
 				    border-style: solid;
 				    background-color: #07C5A9;
 				    border-radius: 20px;
-				}
+					}
 		div.volver{
 				    margin-top: -32px;
 				    align-content: center;
@@ -84,17 +84,15 @@
 				    border-style: solid;
 				    background-color: #07C5A9;
 				    border-radius: 20px;
-				}
+					}
 
-				div.titulo{
-						        background-color: transparent;
-							    width: 983px;
-							    height: 62px;
-							    margin-left: -174px;
-							    padding-left: 300px;
-							    font-size: 28px;
-
-
+		div.titulo{
+			        background-color: transparent;
+				    width: 983px;
+				    height: 62px;
+				    margin-left: -174px;
+				    padding-left: 300px;
+				    font-size: 28px;
 				}
 
 	</style>
