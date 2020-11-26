@@ -77,7 +77,7 @@
 
 	<?php foreach ($this->mis_inscripciones as $key => $value) { ?>
 			<td>	<p><?= $value['nombre_impuesto'] ?></p>
-				<a class="botones" id="botones" href="../eraseTax.php/?id_impuesto='<?= $key ?>'&&cuil='<?= $this->cuil ?>'">ELIMINAR</a></td>
+				<a class="botones" id="botones" href=" eraseTax.php?id_impuesto=<?= $key ?>&&cuil=<?= $this->cuil ?>">ELIMINAR</a></td>
 				
 				<?php } ?>
 

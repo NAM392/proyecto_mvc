@@ -112,7 +112,7 @@
 				
 				<?php foreach($this->clientes as $c) { ?>
 				<tr>	
-				<td>	<a href="mi_cliente.php/?cuil=<?= $c['cuil_cuit'] ?>"><?= $c['nombre'] ?></a></td>
+				<td>	<a href="mi_cliente.php?cuil=<?= $c['cuil_cuit'] ?>"><?= $c['nombre'] ?></a></td>
 				</tr>
 
 					<br>

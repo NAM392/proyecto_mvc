@@ -8,8 +8,9 @@
 				html , body {
 				height: 100%;
 				width: 100%;
-				overflow:hidden;
-				background-image: url(../css/clientela.jpg);
+				overflow:auto;
+				background-color: #C2EA62;
+				/*background-image: url(../css/clientela.jpg);*/
 			}
 			table th.realiz,table td.realiz {
 		        border: 1px solid black;
@@ -139,6 +140,15 @@ a.botones{
 
 
 }
+div.impuestos{
+	        overflow-y: auto;
+		    height: 146px;
+		    width: 60%;
+		    margin-left: 15px;
+		    align-items: center;
+		    align-content: center;
+		    padding-right: 241px;
+			}
 
 
 
@@ -176,6 +186,7 @@ a.botones{
 
 	<br>
 
+<div class="impuestos" >
 	<table>
 		<tbody>
 			
@@ -186,7 +197,7 @@ a.botones{
 				if($value == "no"){ ?>
 				<tr>	
 				<td> <?= $key ?> estado = <?=$value?>
-					<a class="botones" href="../modifico_estado.php/?cuil=<?= $cuil ?>&nombre=<?=$key?>">HECHO</a> </td>
+					<a class="botones" href="../modifico_estado.php?cuil=<?= $cuil ?>&nombre=<?=$key?>">HECHO</a> </td>
 				
 		<?php  
 
@@ -207,15 +218,14 @@ a.botones{
 		
 	 </tbody>
 </table>
-
-
+</div>
 	   
-	   <a class="agregar" href="../agregoImpuesto.php/?cuil=<?= $cuil ?>">AGREGAR IMPUESTO</a>
-	    <a class="quitar" href="../QuitarImpuesto.php/?cuil=<?= $cuil ?>">QUITAR IMPUESTO</a>
+	   <a class="agregar" href=" agregoImpuesto.php?cuil=<?= $cuil ?>">AGREGAR IMPUESTO</a>
+	    <a class="quitar" href=" QuitarImpuesto.php?cuil=<?= $cuil ?>">QUITAR IMPUESTO</a>
 
 
 	<br><br><br><br>
-	<a class="volver" href="../ListadoClientes.php">VOLVER</a>
+	<a class="volver" href=" ListadoClientes.php">VOLVER</a>
 </div>	
 
 <script  src="../../jquery.js" ></script>

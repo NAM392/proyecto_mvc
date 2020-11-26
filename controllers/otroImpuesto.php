@@ -1,10 +1,11 @@
 <?php 
 require '../fw/fw.php';
 require '../models/ClienteInscripto.php';
-/*COMPROBACIONES*/
 
 $cuil = $_GET['cuil'];
 $id_impuesto = $_POST['impuestos'];
+
+
 
 /* probar throw catch */
 

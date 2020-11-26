@@ -3,12 +3,11 @@ require '../fw/fw.php';
 require '../models/ListaCliente.php';
 require '../models/ClienteInscripto.php';
 require '../models/ListaImpuesto.php';
-require '../models/Sanitizacion.php';
 require '../views/NuevoImpuesto.php';
 
-$sani = new Sanitizacion();
-$_cuil = $_GET['cuil'];
-$cuil = $sani->Sani_cuil($_cuil);
+
+$cuil = $_GET['cuil'];
+
 
 $LI = new ListaImpuesto();
 $CI = new ClienteInscripto();

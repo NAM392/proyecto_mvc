@@ -6,8 +6,6 @@ require '../models/ClienteInscripto.php';
 require '../models/ListaImpuesto.php';
 
 
-
-/*COMPRUEBO DATOS ENTRADA */
 $cuil = $_GET['cuil'];
 
 $CI = new ClienteInscripto();
@@ -20,15 +18,6 @@ foreach($inscripciones as $insc){
 	$mis_inscripciones[$insc['id_impuesto']] = $imp->getNombreImpuestoconID($insc['id_impuesto']);
 
 }
-
-
-
-
-
-
-
-
-
 
 
 

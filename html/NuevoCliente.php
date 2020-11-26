@@ -10,7 +10,7 @@
 <form method="POST" action="agregarCliente.php" >
 
 <p title="cuil" >Cuil</p>
-<input type="" name="cuil">
+<input type="number" name="cuil">
 <br>
 	
 <p title="nombre" >Nombre y Apellido</p>
@@ -18,7 +18,7 @@
 <br>
 
 <p title="dni" >Dni</p>
-<input type="" name="dni">
+<input type="number" name="dni">
 <br>
 
 <p title="domicilio" >Domicilio</p>
@@ -30,7 +30,7 @@
 <br>
 
 <p title="celular" >Celular</p>
-<input type="" name="celular">
+<input type="number" name="celular">
 <br><br><br><br>
 
 <button type="submit" id="agregar" >AGREGAR</button>

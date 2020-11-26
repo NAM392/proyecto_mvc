@@ -1,17 +1,15 @@
 <?php 
 require '../fw/fw.php';
-require '../models/eliminoCliente.php';
 require '../models/ListaCliente.php';
 require '../views/ListadoClientes.php';
-require '../models/Sanitizacion.php';
 
 
-$sani = new Sanitizacion();
-$_cuil = $_GET['cuil'];
-$cuil = $sani->Sani_cuil($_cuil);
 
 
-$elimino = new eliminoCliente ();
+$cuil = $_GET['cuil'];
+
+
+$elimino = new ListaCliente ();
 
 /* probar throw catch */
 $resultado = $elimino->Erase($cuil);

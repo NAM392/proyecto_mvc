@@ -9,9 +9,7 @@
     require '../models/ListaVenceYear.php';
    	require '../views/alone_Cliente.php';
 
-
-   	//comprobacion del GET
-   	$cuil = $_GET['cuil'];
+	$cuil = $_GET['cuil'];
 
    	
    	$anio = new ListaVenceYear();
@@ -32,11 +30,6 @@
 		if( $x=$mes->getMiFecha($mis['id_impuesto'],$ultimo) ){	$fecha = $x;};
 		if( $x=$anio->getMiFecha($mis['id_impuesto'],$ultimo) ){$fecha = $x;};
 		$mis_vencimientos[$nombre_de_imp ['nombre_impuesto']] = $fecha['fecha'];
-
-
-
-
-
 	}
 
 				
@@ -49,52 +42,6 @@
 
 	$vista->render();
 
-
-
-
-
-
-
-
-	/*
-	foreach ($mis_inscripciones as $mis ) {
-				
-		$objImpuesto=new stdClass();
-		$objImpuesto->nombre = $imp->getNombreconID($mis['id_impuesto']);
-		$objImpuesto->estado = $mis['estado'];
-
-		array_push($mis_impuestos, $objImpuesto);
-		
-	}
-
-	$jsonImpuestos=json_encode($mis_impuestos);
-
-	
-
-
-
-	SELECT p.descripcion AS producto,f.razon_social as fabricante,s.cantidad AS stock FROM
-	
-	    ((producto p JOIN fabricante f on p.codigo_fabricante = f.codigo_fabricante)
-		  JOIN stock s ON p.codigo_producto = s.codigo_producto)
-		  ORDER BY f.razon_social,p.descripcion
-
-	
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-	
 
 
 	 ?>

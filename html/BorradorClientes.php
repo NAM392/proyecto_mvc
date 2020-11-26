@@ -92,7 +92,7 @@ h1{
 	<?php foreach($this->clientes as $c) { ?>
 		<td>
 				<p><?= $c['nombre'] ?></p>
-				<a class="botones" id="botones" href="eraseClient.php/?cuil='<?= $c['cuil_cuit'] ?>'">ELIMINAR</a> </td>
+				<a class="botones" id="botones" href="eraseClient.php?cuil=<?= $c['cuil_cuit'] ?>">ELIMINAR</a> </td>
 				<?php } ?>
 
 	</tbody>			

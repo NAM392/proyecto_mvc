@@ -11,7 +11,7 @@
 
 
 
- <form method="POST" action="../otroImpuesto.php/?cuil=<?=$this->cuil?>" > 
+ <form method="POST" action=" otroImpuesto.php/?cuil=<?=$this->cuil?>" > 
 	<label for="impuestos" >Seleccione Nuevo Impuesto: </label>
 
 		<select name="impuestos"  id="impuestos">
