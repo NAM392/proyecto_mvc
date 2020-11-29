@@ -21,9 +21,9 @@ class ListaVenceMes extends Model {
 		//esta vacia
 		if(!isset($char )) throw new ValidationException('error set ');
 		//es un string
-		//if(!ctype($char)) throw new ValidationException('error string ');
 		//tamaño minimo y maximo
-//		if(!substr($char, 1)) throw new ValidationException('error longitud ');
+		$ch = strlen($char);
+		if(!$ch == 1) throw new ValidationException('error set ');
 		//escapar comodines 
 		$_char = $this->db->escapeWildcards($char);
 		//escapo comodines
@@ -43,6 +43,27 @@ class ListaVenceMes extends Model {
 		$this->db->query("SELECT fecha FROM listavencemes WHERE id_impuesto = $id_impuesto AND ultimo_num_cui  = $ultimo ");
 		return $this->db->fetch();
 	}
+
+	public function getMesVence($_id,$_ultimo) {
+		$id_impuesto = $this->Vali_idimpuesto($_id);
+		$ultimo = $this->Vali_char($_ultimo);
+		$this->db->query("SELECT MONTH(fecha) FROM listavencemes WHERE id_impuesto = $id_impuesto AND ultimo_num_cui  = $ultimo ");
+		return $this->db->fetch();
+	}
+	public function getAnioVence($_id,$_ultimo) {
+		$id_impuesto = $this->Vali_idimpuesto($_id);
+		$ultimo = $this->Vali_char($_ultimo);
+		$this->db->query("SELECT YEAR(fecha) FROM listavencemes WHERE id_impuesto = $id_impuesto AND ultimo_num_cui  = $ultimo ");
+		return $this->db->fetch();
+	}
+
+
+
+
+
+
+
+
 
 
 }

@@ -23,7 +23,9 @@ class ListaVenceYear extends Model {
 		//es un string
 		if(!is_string($char)) throw new ValidationException('error string ');
 		//tamaño minimo y maximo
-		//if(!substr($char, 1)) throw new ValidationException('error longitud ');		//escapar comodines 
+		$ch = strlen($char);
+		if(!$ch == 1)throw new ValidationException('error tamaño ');
+				//escapar comodines 
 		$_char = $this->db->escapeWildcards($char);
 		//escapo comodines
 		$sani_char = $this->db->escape($_char);
@@ -42,5 +44,20 @@ class ListaVenceYear extends Model {
 		$this->db->query("SELECT fecha FROM listavenceyear WHERE id_impuesto = $id_impuesto AND ultimo_num_cui  = $ultimo ");
 		return $this->db->fetch();
 	}
+
+	public function getMesVence($_id,$_ultimo) {
+		$id_impuesto = $this->Vali_idimpuesto($_id);
+		$ultimo = $this->Vali_char($_ultimo);
+		$this->db->query("SELECT MONTH(fecha) FROM listavenceyear WHERE id_impuesto = $id_impuesto AND ultimo_num_cui  = $ultimo ");
+		return $this->db->fetch();
+	}
+
+	public function getAnioVence($_id,$_ultimo) {
+		$id_impuesto = $this->Vali_idimpuesto($_id);
+		$ultimo = $this->Vali_char($_ultimo);
+		$this->db->query("SELECT YEAR(fecha) FROM listavenceyear WHERE id_impuesto = $id_impuesto AND ultimo_num_cui  = $ultimo ");
+		return $this->db->fetch();
+	}
+
 
 }

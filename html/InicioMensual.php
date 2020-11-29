@@ -74,6 +74,18 @@
 
 		}
 
+		div.volver{
+		    margin-top: -15px;
+		    align-content: center;
+		    margin-left: 300px;
+		    text-align: center;
+		    height: 26px;
+		    width: 164px;
+		    border-style: solid;
+		    background-color: #07C5A9;
+		    border-radius: 20px;
+			}
+
 
 
 	</style>
@@ -91,11 +103,12 @@
 </div>
 
 <div class="hon" >
-<a href="ListadoClientes.php">Morosos</a>
+<a href="HistoricoDeuda.php">Morosos</a>
 </div>
 
 
 </div>
+<div class="volver" >	<a href="inicio.php">VOLVER</a> </div>
 </div>
 
 

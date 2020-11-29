@@ -65,7 +65,17 @@ h1{
 }
 
 
-
+	div.volver{
+	    margin-top: 32px;
+	    align-content: center;
+	    margin-left: 718px;
+	    text-align: center;
+	    height: 26px;
+	    width: 164px;
+	    border-style: solid;
+	    background-color: #07C5A9;
+	    border-radius: 20px;
+		}
 
 
 
@@ -99,6 +109,7 @@ h1{
 				
 </table>
 
+<div class="volver" >	<a href="ListadoClientes.php">VOLVER</a> </div>
 </div>
 
 

@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Asistente Contable Impositivo</title>
-	<meta http-equiv="content-type" ; content="text/html" ; charset="utf-8">
-
-	<style>
+	<title>modifico deuda</title>
+		<style>
 
 		html , body {
 			height: 100%;
@@ -15,24 +13,25 @@
 
 		div.Fondo{
 			    height: 490px;
-			    width: 70%;
+			    width: 60%;
 			    align-content: center;
-			    background-color: lightblue;
+			    background-color: beige;
 			    margin: 10px;
-			    margin-left: 10%;
+			    margin-left: 15%;
 			    margin-right: 8%;
 			    
 		
 						    
 			}
-		h3{
+		h2{
 			    padding-left: 350px;
 			    padding-top: 89px;
     			font-family: fixed-width fontsAndale Mono, monospace;
+    			color: grey;
 		}	
 
 		div.todo{
-			    background-color: blue;
+			    background-color: lightgreen;
     			padding: 75px;
     			height: 100%;
     			width: 100%;
@@ -60,10 +59,10 @@
 
 
 
-		div.hon {
-				margin-top: -30px;
+		button {
+				margin-top: 30px;
 			    align-content: center;
-			    margin-left: 600px;
+			    margin-left: 350px;
 			    text-align: center;
 			    height: 26px;
 			    width: 164px;
@@ -74,6 +73,10 @@
 
 		}
 
+		p,label,input{
+			margin-left: 360px;
+			font-weight: bold;
+		}
 
 
 	</style>
@@ -81,27 +84,19 @@
 <body>
 
 
+<div class="todo" >}
+	<div class="Fondo" >
+<h2>Modifico Deuda</h2>
+<p>N° Cliente : <?= $this->cuil ?></p>
+<p>MES: <?= $this->mes ?></p>
+<p>Monto : $<?= $this->un_deudor['monto_deuda'] ?></p>
 
-<div class="todo" >
- <div class="Fondo" >
- 	<h3  class="titulo"  >Bienvenido : <?= $this->nombre_usuario ?></h3>
-
-<div  class="ing">
-<a href="IngresosMensuales.php">Honorarios</a>
-</div>
-
-<div class="hon" >
-<a href="ListadoClientes.php">Lista de Clientes</a>
-</div>
-
-
+<form method="POST" action="CambioDeuda.php?id_deudor=<?=$this->un_deudor['id_deudor'] ?>" >
+<label for="monto" >Ingreso Monto :</label>
+<input type="number" name="monto">
+<button type="submit" >modificar</button>
+</form>
 </div>
 </div>
-
-
-
-
-
 </body>
 </html>
-

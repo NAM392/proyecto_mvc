@@ -11,7 +11,7 @@ class ClienteInscripto extends Model {
 		
 		if(!ctype_digit($_cuil)) throw new ValidationException('error numeric ');
 		//tiene 12 digitos
-		//if(substr($_cuil, 11))throw new ValidationException('error cantidad numeros ');
+		if(substr($_cuil, 11))throw new ValidationException('error cantidad numeros ');
 		//escapo comillas
 		$sani_cuil = $this->db->escape($_cuil);
 		return $_cuil;
@@ -19,7 +19,6 @@ class ClienteInscripto extends Model {
 	}
 
 	private function Vali_idimpuesto($_idimpuesto) {
-		/*reveer sanitizacion de esto*/
 		//esta vacia
 		if(!isset($_idimpuesto)) throw new ValidationException('error set ');
 		//es un numero

@@ -141,7 +141,7 @@ a.botones{
 
 }
 div.impuestos{
-	        overflow-y: auto;
+	        /*overflow-y: auto;*/
 		    height: 146px;
 		    width: 60%;
 		    margin-left: 15px;
@@ -161,6 +161,7 @@ div.impuestos{
 	<label for="cuil" > CUIL : </label>
 	<p><?= $this->un_cliente['cuil_cuit'] ?></p>
 </div>
+<?= $cuil = $this->un_cliente['cuil_cuit'] ?>
 <div  class="cuil" >
 	<label for="domicilio" > DOMICILIO : </label>
 	<p ><?= $this->un_cliente['domicilio'] ?></p>
@@ -175,14 +176,13 @@ div.impuestos{
 </div>
 <div  class="cuil" >
 	<label for="mail" > FECHA INICIO : </label>
-	<p><?= $this->un_cliente['fecha_inicio'] ?></p>
-</div>
-<div  class="cuil" >
-	<label for="mail" > DEBE $: </label>
-	<p><?= $this->un_cliente['honorarios'] ?></p>
+		<?php 
+	$originalDate = $this->un_cliente['fecha_inicio'];
+	$newDate = date("d/m/Y", strtotime($originalDate)); ?>
+	<p><?= $newDate  ?></p>
+	
 </div>
 
-	<?php $cuil = $this->un_cliente['cuil_cuit']; ?>
 
 	<br>
 
@@ -202,7 +202,9 @@ div.impuestos{
 		<?php  
 
 					foreach ($this->mis_vencimientos as $codigo => $valor) {
-						if($key == $codigo){ ?><td>VENCE : <?=$valor ?> </td> </td>
+						if($key == $codigo){ ?><td>VENCE : <?php 
+							$originalDate = $valor;
+							$newDate = date("d/m/Y", strtotime($originalDate)); ?><?=$newDate?> </td> </td>
 						<?php }
 					}
 		        } ?>

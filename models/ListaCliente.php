@@ -10,7 +10,7 @@ class ListaCliente extends Model {
 		//es numero
 		if(!ctype_digit($cuil)) throw new ValidationException('error numeric ');
 		//tiene 12 digitos
-		//if(!substr($_cuil, 11))throw new ValidationException('error cantidad numeros ');
+		if(!substr($_cuil, 11))throw new ValidationException('error cantidad numeros ');
 		//escapo comillas
 		$sani_cuil = $this->db->escape($cuil);
 		return $sani_cuil;
@@ -46,7 +46,7 @@ class ListaCliente extends Model {
 
 	}
 	private function Vali_dni($_dni) {
-		//var_dump($_dni);
+		
 		//esta vacia
 		if(!isset($_dni)) throw new ValidationException('error set ');
 		//es un numero

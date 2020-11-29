@@ -18,17 +18,16 @@ class ListaImpuesto extends Model {
 		$_palabra = $this->db->escapeWildcards($palabra);
 		//escapo comodines
 		$sani_palabra = $this->db->escape($_palabra);
-		return $sani_palabra;
+		return $_palabra;
 
 	}
 	private function Vali_idimpuesto($_idimpuesto) {
-		/*reveer sanitizacion de esto*/
 		//esta vacia
 		if(!isset($_idimpuesto)) throw new ValidationException('error set ');
 		//es un numero
 		if(!ctype_digit($_idimpuesto)) throw new ValidationException('error numeros ');
 		//tiene menos de 50 digitos , mas de 1 digito
-	//	if(!$_idimpuesto >= 1)throw new ValidationException('es un 0 ');
+		if(!$_idimpuesto >= 1)throw new ValidationException('es un 0 ');
 		//escapo comillas
 		$sani_imp = $this->db->escape($_idimpuesto);
 		return $sani_imp;
@@ -49,10 +48,10 @@ class ListaImpuesto extends Model {
 		}
 	
 	public function getIDconNombre($_nombre){
-		$nombre = Vali_string($_nombre);	
+		//$nombre = $this->Vali_string($_nombre);	
 			
 		$this->db->query("SELECT id_impuesto FROM listaimpuesto 
-						  WHERE nombre_impuesto = $nombre");
+						  WHERE nombre_impuesto = $_nombre");
 		return $this->db->fetch();
 		
 		}

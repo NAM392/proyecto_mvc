@@ -25,7 +25,7 @@ $_nombre_imp = $_GET['nombre'] ;
 	$mis_impuestos=[];
 
 	
-	
+	var_dump($_nombre_imp);
 	$id_imp= $imp->getIDconNombre($_nombre_imp);
 	
 	$id_del_impuesto = $id_imp['id_impuesto'];
@@ -40,9 +40,7 @@ $_nombre_imp = $_GET['nombre'] ;
 		if( $x=$mes->getMiFecha($mis['id_impuesto'],$ultimo) ){	$fecha = $x;};
 		if( $x=$anio->getMiFecha($mis['id_impuesto'],$ultimo) ){$fecha = $x;};
 		$mis_vencimientos[$nombre_de_imp ['nombre_impuesto']] = $fecha['fecha'];
-	}
-
-	
+	}	
 	
 	
 	$un_cliente = $LC->getClienteConCuil($cuil);

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>mes en curso</title>
+	<title>deudores</title>
 		<style>
 
 		html , body {
 				height: 100%;
 				width: 100%;
 				overflow:hidden;
-				background-image: url(../css/deudores.jpg);
+				
 				background-repeat:no-repeat;
 				background-position:center center;
 				background-size:contain;
@@ -30,7 +30,7 @@
 			    margin-left: 460px;
 			    border-style: solid;
 			    display: flex;
-			    background-color: olive;
+			    background-color: #5F4CA2;
 			}
 
 
@@ -60,7 +60,7 @@
 			    margin-left: 400px;
 			    border-style: solid;
 			    display: flex;
-			    background-color: olive;
+			    background-color: #5F4CA2;
 			    padding-top: 70px;
 			    overflow: auto;
 			}
@@ -139,19 +139,16 @@ h1{
 
 </head>
 <body>
-<h1><?= $mes = $this->mes['mes'] ?> </h1>
-<?php $hoy = getdate(); ?>
+<h1>Lista de Deudores Totales</h1>
+
 <div class="con_clientes" >
 <table>
-	<tbody>
-		
-		<?php foreach ($this->deudores as $d) { ?>
+	<tbody>		
+		<?php foreach ($this->todos as $t) { ?>
 			<tr>
-			<?php if($d['monto_deuda'] > 0) { 
-				 	 if(date("m",strtotime($d['fecha_debe'])) == $hoy['mon']) { ?>	
-						<td>N°Cliente: <?= $d['cuil_cuit'] ?> importe :  $<?= $d['monto_deuda']  ?> <a class="botones" href="ModificoDeudor.php?cuil=<?= $d['cuil_cuit'] ?>&&mes=<?= $mes ?> " >modifico</a>
+				<td>N°Cliente: <?= $t['cuil_cuit'] ?><br> Deuda :  $<?= $t['total']  ?> 
 		
-		<?php } } } ?>
+		<?php }  ?>
 
 
 	
