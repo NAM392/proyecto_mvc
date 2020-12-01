@@ -1,3 +1,11 @@
+<?php 
+
+if(!isset($_SESSION['ingrese'])){
+	header('location: ing.php');
+	exit();
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -112,7 +120,7 @@
 				
 				<?php foreach($this->clientes as $c) { ?>
 				<tr>	
-				<td>	<a href="mi_cliente.php?cuil=<?= $c['cuil_cuit'] ?>"><?= $c['nombre'] ?></a></td>
+				<td>	<a href="mi-cliente-<?= $c['cuil_cuit'] ?>"><?= $c['nombre'] ?></a></td>
 				</tr>
 
 					<br>
@@ -128,11 +136,11 @@
 
 
 
-			<div  class="agregar">	<a href="NuevoCliente.php">AGREGAR NUEVO CLIENTE</a> </div>
+			<div  class="agregar">	<a href="nuevo-cliente">AGREGAR NUEVO CLIENTE</a> </div>
 				
-			<div class="borrar" >	<a href="ListaBorrarCliente.php">BORRAR CLIENTE</a> </div>
+			<div class="borrar" >	<a href="borro-cliente">BORRAR CLIENTE</a> </div>
 				
-			<div class="volver" >	<a href="inicio.php">VOLVER</a> </div>
+			<div class="volver" >	<a href="Asistente-Contable">VOLVER</a> </div>
 				
 				
 

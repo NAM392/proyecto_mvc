@@ -1,4 +1,10 @@
 <?php 
+session_start();
+if(!isset($_SESSION['ingrese'])){
+	header('location: ing.php');
+	exit();
+}
+
 require '../fw/fw.php';
 require '../models/ListaCliente.php';
 require '../views/ListadoClientes.php';
@@ -15,7 +21,7 @@ $elimino = new ListaCliente ();
 $resultado = $elimino->Erase($cuil);
 
 
-header('Location:../ListadoClientes.php');
+header('Location:Lista-Clientes');
 
 
 /*

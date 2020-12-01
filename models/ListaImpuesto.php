@@ -51,7 +51,7 @@ class ListaImpuesto extends Model {
 		//$nombre = $this->Vali_string($_nombre);	
 			
 		$this->db->query("SELECT id_impuesto FROM listaimpuesto 
-						  WHERE nombre_impuesto = $_nombre");
+						  WHERE nombre_impuesto = '$_nombre'");
 		return $this->db->fetch();
 		
 		}

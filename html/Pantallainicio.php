@@ -74,6 +74,21 @@
 
 		}
 
+		div.cl {
+				margin-top: 70px;
+			    align-content: center;
+			    margin-left: 420px;
+			    text-align: center;
+			    height: 26px;
+			    width: 164px;
+			    border-style: solid;
+			    background-color: lightgreen;
+			    border-radius: 20px;
+
+
+		}
+
+
 
 
 	</style>
@@ -87,13 +102,16 @@
  	<h3  class="titulo"  >Bienvenido : <?= $this->nombre_usuario ?></h3>
 
 <div  class="ing">
-<a href="IngresosMensuales.php">Honorarios</a>
+<a href="Honorarios">Honorarios</a>
 </div>
 
 <div class="hon" >
-<a href="ListadoClientes.php">Lista de Clientes</a>
+<a href="Lista-Clientes">Lista de Clientes</a>
 </div>
 
+<div class="cl" >
+<a href="destroy">CERRAR SESION</a>
+</div>
 
 </div>
 </div>

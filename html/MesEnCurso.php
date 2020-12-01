@@ -149,7 +149,7 @@ h1{
 			<tr>
 			<?php if($d['monto_deuda'] > 0) { 
 				 	 if(date("m",strtotime($d['fecha_debe'])) == $hoy['mon']) { ?>	
-						<td>N°Cliente: <?= $d['cuil_cuit'] ?> importe :  $<?= $d['monto_deuda']  ?> <a class="botones" href="ModificoDeudor.php?cuil=<?= $d['cuil_cuit'] ?>&&mes=<?= $mes ?> " >modifico</a>
+						<td>N°Cliente: <?= $d['cuil_cuit'] ?> importe :  $<?= $d['monto_deuda']  ?> <a class="botones" href="modifico-deuda-<?= $d['cuil_cuit'] ?>-<?= $mes ?>" >modifico</a>
 		
 		<?php } } } ?>
 
@@ -161,7 +161,7 @@ h1{
 </table>
 </div>
 
-<div class="volver" >	<a href="IngresosMensuales.php">VOLVER</a> </div>
+<div class="volver" >	<a href="Honorarios">VOLVER</a> </div>
 
 </body>
 </html>

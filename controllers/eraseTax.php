@@ -1,4 +1,10 @@
 <?php 
+session_start();
+if(!isset($_SESSION['ingrese'])){
+	header('location: ing.php');
+	exit();
+}
+
 require '../fw/fw.php';
 require '../models/ClienteInscripto.php';
 require '../views/ListadoClientes.php';
@@ -14,7 +20,7 @@ var_dump($cuil);
 $resultado = $elimino->Erase_Impuesto($cuil,$id_impuesto);
 
 
-header('Location: ListadoClientes.php');
+header('Location:Lista-Clientes');
 
 
 

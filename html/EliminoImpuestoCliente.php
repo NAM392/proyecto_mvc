@@ -89,7 +89,7 @@
 
 	<?php foreach ($this->mis_inscripciones as $key => $value) { ?>
 			<td>	<p><?= $value['nombre_impuesto'] ?></p>
-				<a class="botones" id="botones" href=" eraseTax.php?id_impuesto=<?= $key ?>&&cuil=<?= $this->cuil ?>">ELIMINAR</a></td>
+				<a class="botones" id="botones" href=" elimino-impuesto-<?= $key ?>-<?= $this->cuil ?>">ELIMINAR</a></td>
 				
 				<?php } ?>
 
@@ -97,7 +97,7 @@
 				
 </table>
 
-<div class="volver" >	<a href="ListadoClientes.php">VOLVER</a> </div>
+<div class="volver" >	<a href="Lista-Clientes">VOLVER</a> </div>
 
 </div>
 

@@ -8,7 +8,6 @@ class ClienteInscripto extends Model {
 		//esta vacia
 		if(!isset($_cuil )) throw new ValidationException('error set ');
 		//es numero
-		
 		if(!ctype_digit($_cuil)) throw new ValidationException('error numeric ');
 		//tiene 12 digitos
 		if(substr($_cuil, 11))throw new ValidationException('error cantidad numeros ');
@@ -46,8 +45,8 @@ class ClienteInscripto extends Model {
 
 
 	public function ModificoEstadoOK($_id,$_cuil){
-		$CUIL = Vali_cuil($_cuil);
-		$ID = Vali_idimpuesto($_id);
+		$CUIL =$this->Vali_cuil($_cuil);
+		$ID = $this->Vali_idimpuesto($_id);
 		$si = "\"si\"";
 		//preguntar si ya habia un si
 		$estado = $this->db->query("SELECT estado FROM clienteinscripto 

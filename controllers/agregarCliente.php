@@ -1,4 +1,10 @@
 <?php 
+session_start();
+if(!isset($_SESSION['ingrese'])){
+	header('location: ing.php');
+	exit();
+}
+
 
 require '../fw/fw.php';
 require '../views/ListadoClientes.php';
@@ -17,7 +23,7 @@ $resultado = $LC->agregar($cuil_cuit,$nombre,$dni,$domicilio,$mail,$celular);
 
 /*aca probar throw y catch*/
 
-if($resultado == 1){header('Location:ListadoClientes.php');}
+if($resultado == 1){header('Location:Lista-Clientes');}
 elseif ($resultado == 3) { die();echo "cliente ya existe" ;}
 else{die();}
 

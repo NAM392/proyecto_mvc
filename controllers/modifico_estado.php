@@ -1,4 +1,10 @@
 <?php 
+session_start();
+if(!isset($_SESSION['ingrese'])){
+	header('location: ing.php');
+	exit();
+}
+
 
 require '../fw/fw.php';
 require '../models/ClienteInscripto.php';
@@ -11,7 +17,9 @@ require '../models/ListaVenceYear.php';
 
 
 $cuil = $_GET['cuil'];
-$_nombre_imp = $_GET['nombre'] ;
+$_n_imp = $_GET['nombre'] ;
+var_dump($_n_imp);
+$_nombre_imp = str_replace('_', ' ', $_n_imp);
 
 
 
@@ -25,7 +33,7 @@ $_nombre_imp = $_GET['nombre'] ;
 	$mis_impuestos=[];
 
 	
-	var_dump($_nombre_imp);
+	
 	$id_imp= $imp->getIDconNombre($_nombre_imp);
 	
 	$id_del_impuesto = $id_imp['id_impuesto'];

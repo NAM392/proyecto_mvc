@@ -142,7 +142,7 @@ a.botones{
 }
 div.impuestos{
 	        /*overflow-y: auto;*/
-		    height: 146px;
+		    height: 263px;
 		    width: 60%;
 		    margin-left: 15px;
 		    align-items: center;
@@ -161,7 +161,7 @@ div.impuestos{
 	<label for="cuil" > CUIL : </label>
 	<p><?= $this->un_cliente['cuil_cuit'] ?></p>
 </div>
-<?= $cuil = $this->un_cliente['cuil_cuit'] ?>
+<?php $cuil = $this->un_cliente['cuil_cuit'] ?>
 <div  class="cuil" >
 	<label for="domicilio" > DOMICILIO : </label>
 	<p ><?= $this->un_cliente['domicilio'] ?></p>
@@ -195,9 +195,12 @@ div.impuestos{
 			foreach ($this->mis_impuestos as $key => $value) {
 
 				if($value == "no"){ ?>
+
 				<tr>	
-				<td> <?= $key ?> estado = <?=$value?>
-					<a class="botones" href="../modifico_estado.php?cuil=<?= $cuil ?>&nombre=<?=$key?>">HECHO</a> </td>
+
+				<td> <?= $key ?> estado = (NO REALIZADO)
+					<?php $rpl = str_replace(' ', '_', $key);?>
+					<a class="botones" href=" cambio-estado-<?= $cuil ?>-<?=$rpl?>">HECHO</a> </td>
 				
 		<?php  
 
@@ -206,28 +209,28 @@ div.impuestos{
 							$originalDate = $valor;
 							$newDate = date("d/m/Y", strtotime($originalDate)); ?><?=$newDate?> </td> </td>
 						<?php }
-					}
-		        } ?>
-		        </tr>
-				<? else { ?>
+					} 
+				}
+				else{ ?>
 					<tr>
 					 <td class="realiz"> <?= $key ?> estado = REALIZADO </td> 
 					 </tr>
 
-			  <?php } 
-
-		  ?>
+			  <?php } }
+		        ?>
+		        </tr>
+				
 		
 	 </tbody>
 </table>
 </div>
 	   
-	   <a class="agregar" href=" agregoImpuesto.php?cuil=<?= $cuil ?>">AGREGAR IMPUESTO</a>
-	    <a class="quitar" href=" QuitarImpuesto.php?cuil=<?= $cuil ?>">QUITAR IMPUESTO</a>
+	   <a class="agregar" href=" nuevo-impuesto-<?= $cuil ?>">AGREGAR IMPUESTO</a>
+	    <a class="quitar" href=" quito-impuesto-<?= $cuil ?>">QUITAR IMPUESTO</a>
 
 
 	<br><br><br><br>
-	<a class="volver" href=" ListadoClientes.php">VOLVER</a>
+	<a class="volver" href=" Lista-Clientes">VOLVER</a>
 </div>	
 
 <script  src="../../jquery.js" ></script>

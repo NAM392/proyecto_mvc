@@ -74,6 +74,21 @@
 
 		}
 
+		div.haber {
+				margin-top: 30px;
+			    align-content: center;
+			    margin-left: 430px;
+			    text-align: center;
+			    height: 26px;
+			    width: 164px;
+			    border-style: solid;
+			    background-color: #8DC507;
+			    border-radius: 20px;
+
+
+		}
+
+
 		div.volver{
 		    margin-top: -15px;
 		    align-content: center;
@@ -99,16 +114,16 @@
  	<h2  class="titulo"  >HONORARIOS</h2>
 
 <div  class="ing">
-<a href="MesActual.php">Mes en Curso</a>
+<a href="Mes-en-Curso">Mes en Curso</a>
 </div>
 
 <div class="hon" >
-<a href="HistoricoDeuda.php">Morosos</a>
+<a href="historico-deuda">Morosos</a>
 </div>
 
 
 </div>
-<div class="volver" >	<a href="inicio.php">VOLVER</a> </div>
+<div class="volver" >	<a href="Asistente-Contable">VOLVER</a> </div>
 </div>
 
 

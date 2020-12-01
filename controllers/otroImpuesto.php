@@ -1,4 +1,10 @@
 <?php 
+session_start();
+if(!isset($_SESSION['ingrese'])){
+	header('location: ing.php');
+	exit();
+}
+
 require '../fw/fw.php';
 require '../models/ClienteInscripto.php';
 
@@ -13,7 +19,7 @@ $CI = new ClienteInscripto();
 $resultado = $CI->AgregoNuevoImpuesto($cuil,$id_impuesto);
 
 
-header('Location:../ListadoClientes.php');
+header('Location:Lista-Clientes');
 
 
 

@@ -1,0 +1,43 @@
+# archivo .htaccess
+
+RewriteEngine on
+
+RewriteRule ^inicio$ controllers/ing.php
+
+RewriteRule ^Asistente-Contable$ controllers/InicioSesion.php
+
+RewriteRule ^destroy$ controllers/destruirSesion.php
+
+RewriteRule ^Lista-Clientes$ controllers/ListadoClientes.php
+
+RewriteRule ^Honorarios$ controllers/IngresosMensuales.php
+
+RewriteRule ^mi-cliente-([0-9]+)$ controllers/mi_cliente.php?cuil=$1
+
+RewriteRule ^cambio-estado-([0-9]+)-([a-zA-Z_]+)$ controllers/modifico_estado.php?cuil=$1&nombre=$2
+
+RewriteRule ^nuevo-impuesto-([0-9]+)$ controllers/agregoImpuesto.php?cuil=$1
+
+RewriteRule ^quito-impuesto-([0-9]+)$ controllers/QuitarImpuesto.php?cuil=$1
+
+RewriteRule ^elimino-cliente-([0-9]+)$ controllers/eraseClient.php?cuil=$1
+
+RewriteRule ^elimino-impuesto-([0-9]+)-([0-9]+)$ controllers/eraseTax.php?id_impuesto=$1&&cuil=$2
+
+RewriteRule ^agrego-impuesto-([0-9]+)$ controllers/otroImpuesto.php/?cuil=$1
+
+RewriteRule ^nuevo-cliente$ controllers/NuevoCliente.php
+
+RewriteRule ^agrego-cliente$ controllers/agregarCliente.php
+
+RewriteRule ^borro-cliente$ controllers/ListaBorrarCliente.php
+
+RewriteRule ^Mes-en-Curso$ controllers/MesActual.php
+
+RewriteRule ^modifico-deuda-([0-9]+)-([a-zA-Z_]+)$ controllers/ModificoDeudor.php?cuil=$1&&mes=$2
+
+RewriteRule ^modifico-deuda-([0-9]+)$ controllers/CambioDeuda.php?id_deudor=$1
+
+RewriteRule ^historico-deuda$ controllers/HistoricoDeuda.php
+
+RewriteRule ^ingreso-haber$ controllers/IngresoHaber.php

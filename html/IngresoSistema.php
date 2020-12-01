@@ -70,7 +70,7 @@
 <body>
 <div class="fondo" id="fonde">
 	<div class="LOGIN" id="logs" >
-	<form method="POST" action="InicioSesion.php" >
+	<form method="POST" action="Asistente-Contable" >
     <h2>INGRESO</h2>		
 	<p>USUARIO</p>
 	<input type="text" name="user">

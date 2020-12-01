@@ -84,7 +84,7 @@
 <div class="todo" >
 <h2>AGREGAR NUEVO CLIENTE </h2>
 <div class="Fondo" >
-<form method="POST" action="agregarCliente.php" >
+<form method="POST" action="agrego-cliente" >
 
 <p title="cuil" >Cuil</p>
 <input type="number" name="cuil">
@@ -114,7 +114,7 @@
 
 
 
-<a href="ListadoClientes.php">CANCELAR</a>
+<a href="Lista-Clientes">CANCELAR</a>
 
 </form>
 </div>
