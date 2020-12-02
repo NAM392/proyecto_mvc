@@ -5,7 +5,6 @@
 class ListaVenceYear extends Model {
 	
 	private function Vali_idimpuesto($_idimpuesto) {
-		/*reveer sanitizacion de esto*/
 		//esta vacia
 		if(!isset($_idimpuesto)) throw new ValidationException('error set ');
 		//es un numero

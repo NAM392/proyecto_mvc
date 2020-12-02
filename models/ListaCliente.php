@@ -10,7 +10,7 @@ class ListaCliente extends Model {
 		//es numero
 		if(!ctype_digit($cuil)) throw new ValidationException('error numeric ');
 		//tiene 11 digitos
-		//if(!substr($_cuil, 11))throw new ValidationException('error cantidad numeros ');
+		if(!substr($_cuil, 11))throw new ValidationException('error cantidad numeros ');
 		//escapo comillas
 		$sani_cuil = $this->db->escape($cuil);
 		return $sani_cuil;

@@ -5,7 +5,6 @@
 class ListaVenceMes extends Model {
 	
 	private function Vali_idimpuesto($_idimpuesto) {
-		/*reveer sanitizacion de esto*/
 		//esta vacia
 		if(!isset($_idimpuesto)) throw new ValidationException('error set ');
 		//es un numero
@@ -20,7 +19,6 @@ class ListaVenceMes extends Model {
 	private function Vali_char($char) {
 		//esta vacia
 		if(!isset($char )) throw new ValidationException('error set ');
-		//es un string
 		//tamaño minimo y maximo
 		$ch = strlen($char);
 		if(!$ch == 1) throw new ValidationException('error set ');
