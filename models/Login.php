@@ -15,6 +15,7 @@ class Login extends Model {
 		$_palabra = $this->db->escapeWildcards($palabra);
 		//escapo comodines
 		$sani_palabra = $this->db->escape($_palabra);
+		
 		return $_palabra;
 
 	}

@@ -194,13 +194,14 @@ div.impuestos{
 			
 			foreach ($this->mis_impuestos as $key => $value) {
 
-				if($value == "no"){ ?>
+
+				if($value == 0){ ?>
 
 				<tr>	
 
 				<td> <?= $key ?> estado = (NO REALIZADO)
 					<?php $rpl = str_replace(' ', '_', $key);?>
-					<a class="botones" href=" cambio-estado-<?= $cuil ?>-<?=$rpl?>">HECHO</a> </td>
+					<a class="botones" href="cambio-estado-<?= $cuil ?>-<?=$rpl?>">HECHO</a> </td>
 				
 		<?php  
 
@@ -233,7 +234,7 @@ div.impuestos{
 	<a class="volver" href=" Lista-Clientes">VOLVER</a>
 </div>	
 
-<script  src="../../jquery.js" ></script>
+<script  src="../jquery.js" ></script>
 <script type="text/javascript">
 	
 

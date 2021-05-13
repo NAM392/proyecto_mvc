@@ -13,7 +13,7 @@ if(!isset($_SESSION['ingrese'])){
     require '../models/ListaVenceYear.php';
    	require '../views/alone_Cliente.php';
 
-	$cuil = $_GET['cuil'];
+	$cuil = intval($_GET['cuil']);
 	
    	
    	$anio = new ListaVenceYear();
@@ -33,6 +33,7 @@ if(!isset($_SESSION['ingrese'])){
 		//creo un array asociativo con impuestos y su fecha de vencimiento
 		if( $x=$mes->getMiFecha($mis['id_impuesto'],$ultimo) ){	$fecha = $x;};
 		if( $x=$anio->getMiFecha($mis['id_impuesto'],$ultimo) ){$fecha = $x;};
+		
 		$mis_vencimientos[$nombre_de_imp ['nombre_impuesto']] = $fecha['fecha'];
 	}
 

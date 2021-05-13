@@ -11,24 +11,20 @@ class ListaDeudores extends Model {
 		//tiene 11 digitos
 		if(substr($_cuil, 11))throw new ValidationException('error cantidad numeros ');
 		//escapo comillas
-		$sani_cuil = $this->db->escape($_cuil);
-		return $_cuil;
+		$sani_cuil = $_cuil;
+
+		return $sani_cuil;
 
 	}
-	private function Vali_number($_number) {
-		
+	private function Vali_num($num) {
 		//esta vacia
-		if(!isset($_number)) throw new ValidationException('error set ');
+		if(!isset($num )) throw new ValidationException('error set ');
 		//es un numero
-		if(!ctype_digit($_number)) throw new ValidationException('error numeros ');
-		//tiene menos de 50 digitos , mas de 1 digito
-		$nb = strlen($_number);
-		if($nb < 1  || $nb > 50 ) throw new ValidationException('error longitud min ');
-		//escapo comillas
-		$sani_number = $this->db->escape($_number);
-		return $sani_number;
-
-	}	
+		if(!ctype_digit($num)) throw new ValidationException('error numeros ');
+		
+		$sani_num = $num;
+		return $sani_num;
+	}
 
 	private function Vali_id($_id) {
 		//esta vacia
@@ -39,6 +35,7 @@ class ListaDeudores extends Model {
 		if(!$_id >= 1)throw new ValidationException('es un 0 ');
 		//escapo comillas
 		$sani_id = $this->db->escape($_id);
+
 		return $sani_id;
 
 	}
@@ -60,7 +57,7 @@ class ListaDeudores extends Model {
 
 
 	public function CambioDeuda($_id,$_monto){
-		$monto = $this->Vali_number($_monto);
+		$monto = $this->Vali_num($_monto);
 		$id = $this->Vali_id($_id);
 
 		if(!$this->db->query("UPDATE  listadeudores SET monto_deuda = (monto_deuda - $monto) WHERE id_deudor = $_id ")){

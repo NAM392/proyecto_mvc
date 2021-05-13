@@ -120,6 +120,7 @@ if(!isset($_SESSION['ingrese'])){
 				
 				<?php foreach($this->clientes as $c) { ?>
 				<tr>	
+
 				<td>	<a href="mi-cliente-<?= $c['cuil_cuit'] ?>"><?= $c['nombre'] ?></a></td>
 				</tr>
 
@@ -171,7 +172,7 @@ if(!isset($_SESSION['ingrese'])){
 
 
 
-//<a href="Honorarios.php">Honorarios</a>
+
 
 
 ?>

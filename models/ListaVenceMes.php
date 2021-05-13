@@ -12,21 +12,20 @@ class ListaVenceMes extends Model {
 		//tiene menos de 50 digitos , mas de 1 digito
 		if(!$_idimpuesto >= 1)throw new ValidationException('es un 0 ');
 		//escapo comillas
-		$sani_imp = $this->db->escape($_idimpuesto);
+		$sani_imp = $_idimpuesto;
+		
 		return $sani_imp;
 
 	}
-	private function Vali_char($char) {
+	private function Vali_num($num) {
 		//esta vacia
-		if(!isset($char )) throw new ValidationException('error set ');
+		if(!isset($num )) throw new ValidationException('error set ');
+		//es un numero
+		if(!ctype_digit($num)) throw new ValidationException('error numeros ');
 		//tamaño minimo y maximo
-		$ch = strlen($char);
-		if(!$ch == 1) throw new ValidationException('error set ');
-		//escapar comodines 
-		$_char = $this->db->escapeWildcards($char);
-		//escapo comodines
-		$sani_char = $this->db->escape($_char);
-		return $sani_char;
+		if(!$num >= 1)throw new ValidationException('es un 0 ');
+				
+		return $num;
 
 	}
 	
@@ -37,20 +36,20 @@ class ListaVenceMes extends Model {
 
 	public function getMiFecha($_id,$_ultimo) {
 		$id_impuesto = $this->Vali_idimpuesto($_id);
-		$ultimo = $this->Vali_char($_ultimo);
+		$ultimo = $this->Vali_num($_ultimo);
 		$this->db->query("SELECT fecha FROM listavencemes WHERE id_impuesto = $id_impuesto AND ultimo_num_cui  = $ultimo ");
 		return $this->db->fetch();
 	}
 
 	public function getMesVence($_id,$_ultimo) {
 		$id_impuesto = $this->Vali_idimpuesto($_id);
-		$ultimo = $this->Vali_char($_ultimo);
+		$ultimo = $this->Vali_num($_ultimo);
 		$this->db->query("SELECT MONTH(fecha) FROM listavencemes WHERE id_impuesto = $id_impuesto AND ultimo_num_cui  = $ultimo ");
 		return $this->db->fetch();
 	}
 	public function getAnioVence($_id,$_ultimo) {
 		$id_impuesto = $this->Vali_idimpuesto($_id);
-		$ultimo = $this->Vali_char($_ultimo);
+		$ultimo = $this->Vali_num($_ultimo);
 		$this->db->query("SELECT YEAR(fecha) FROM listavencemes WHERE id_impuesto = $id_impuesto AND ultimo_num_cui  = $ultimo ");
 		return $this->db->fetch();
 	}

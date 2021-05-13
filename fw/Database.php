@@ -13,7 +13,7 @@ class Database {
 	}
 
 	private function connect() {
-		$this->cn = mysqli_connect("localhost","root","probando","asistecontador");
+		$this->cn = mysqli_connect("localhost","root","","asistentecontador");
 	}
 
 	public function query($q) {

@@ -16,10 +16,11 @@ require '../models/ListaVenceYear.php';
 
 
 
-$cuil = $_GET['cuil'];
+$cuil = intval($_GET['cuil']);
 $_n_imp = $_GET['nombre'] ;
-var_dump($_n_imp);
+
 $_nombre_imp = str_replace('_', ' ', $_n_imp);
+
 
 
 
