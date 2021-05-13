@@ -9,7 +9,7 @@ class ListaVenceMes extends Model {
 		if(!isset($_idimpuesto)) throw new ValidationException('error set ');
 		//es un numero
 		if(!ctype_digit($_idimpuesto)) throw new ValidationException('error numeros ');
-		//tiene menos de 50 digitos , mas de 1 digito
+		// mayor que 0
 		if(!$_idimpuesto >= 1)throw new ValidationException('es un 0 ');
 		//escapo comillas
 		$sani_imp = $_idimpuesto;

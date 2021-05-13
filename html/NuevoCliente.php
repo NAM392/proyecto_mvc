@@ -87,7 +87,7 @@
 <form method="POST" action="agrego-cliente" >
 
 <p title="cuil" >Cuil</p>
-<input type="number" name="cuil" id="cuil" value="" min="1" maxlength="99999999999" required>
+<input type="number" name="cuil" id="cuil" value="" min="1" maxlength="99999999999"  required>
 <br>
 	
 <p title="nombre" >Nombre y Apellido</p>
@@ -127,7 +127,7 @@
 
 
 	$("#agregar").click(function(){
-		var val_cuil = $("#cuil").val().length;
+		var val_cuil = $("#cuil").val();
 		var val_nomb =  $("#nombre").val();
 		var val_dni = $("#dni").val();
 		var val_mail = $("#mail").val();
@@ -138,16 +138,17 @@
 
 	
 		var errors = "ERRORES : \n";
-		if(val_cuil == 0){
+		if(val_cuil.length == 0){
 			errors+="cuil  vacio \n";
 			flag = 1;
 		} 
-		else if (val_cuil != 11){
+		else if (val_cuil.length != 11){
 			errors+="cuil  mal cargado \n";	
 			flag = 1;
 		}
 		if(val_nomb.length == 0 ){
 			errors+="nombre vacio \n";
+			flag = 1;
 		}
 		else if (val_nomb.length > 50 ){
 			errors+="nombre y apellido invalido\n";	

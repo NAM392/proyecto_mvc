@@ -32,10 +32,7 @@ class ListaImpuesto extends Model {
 		
 		$sani_imp = $_idimpuesto;
 		return $sani_imp;
-
-	}
-
-	
+	}	
 	public function getTodos() {
 		$this->db->query("SELECT * FROM listaimpuesto");
 		return $this->db->fetchAll();

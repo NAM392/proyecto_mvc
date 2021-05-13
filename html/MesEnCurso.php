@@ -8,7 +8,7 @@
 				height: 100%;
 				width: 100%;
 				overflow:hidden;
-				background-image: url(../css/deudores.jpg);
+				background-image: url(css/deudores.jpg);
 				background-repeat:no-repeat;
 				background-position:center center;
 				background-size:contain;

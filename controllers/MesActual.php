@@ -19,8 +19,8 @@ if(!isset($_SESSION['ingrese'])){
 
 
 
-	$hoy = getdate();
-	$mes_actual = $M->getMes($hoy['mon']);
+	$hoy =  getdate();
+	$mes_actual = $M->getMes(intval($hoy['mon']));
 
 
 	$vista = new MesEnCurso();

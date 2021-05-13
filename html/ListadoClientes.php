@@ -18,7 +18,7 @@ if(!isset($_SESSION['ingrese'])){
 				height: 100%;
 				width: 100%;
 				overflow:hidden;
-				background-image: url(../css/clientela.jpg);
+				background-image: url(css/clientela.jpg);
 			}
 
 		p{
